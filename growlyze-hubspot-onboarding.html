@@ -635,6 +635,15 @@ body{font-family:var(--font);font-size:17px;line-height:1.7}.wrap{max-width:1280
 .testimonial-video.is-pending video{visibility:hidden}
 .testimonial-video.is-pending::after{content:"Video coming soon";position:absolute;inset:0;display:grid;place-items:center;color:rgba(245,240,230,.6);font-size:14px;font-weight:600;letter-spacing:.02em;border:1px dashed rgba(195,160,255,.35);border-radius:inherit}
 </style>
+<style id="credential-hover">
+/* Credentials: gentle zoom on hover (same behaviour as the implementation and migration pages) */
+.credential-showcase .official-badge img,.credential-showcase .official-cert img{transition:transform .25s ease}
+.credential-showcase .official-badge:hover img{transform:scale(1.1)}
+.credential-showcase .official-badge-row .official-badge:first-child:hover img{transform:scale(1.4)}
+.credential-showcase .official-cert:hover img{transform:scale(1.12)}
+.credential-showcase .official-badge figcaption,.credential-showcase .official-cert figcaption{transition:color .2s}
+@media (hover:none){.credential-showcase .official-badge:active img{transform:scale(1.1)}.credential-showcase .official-cert:active img{transform:scale(1.12)}}
+</style>
 </head>
 <body>
 <!-- [BUILD] Paste your Google Tag Manager noscript snippet here -->
