@@ -1,0 +1,12 @@
+{
+  "name": "growlyze-hubspot-pages",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Growlyze HubSpot implementation, migration and onboarding landing pages",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
