@@ -17,3 +17,31 @@
 .testimonial-video{position:relative}
 .testimonial-video.is-pending video{visibility:hidden}
 .testimonial-video.is-pending::after{content:"Video coming soon";position:absolute;inset:0;display:grid;place-items:center;color:rgba(245,240,230,.6);font-size:14px;font-weight:600;letter-spacing:.02em;border:1px dashed rgba(195,160,255,.35);border-radius:inherit}
+/* Implementation hero: desktop layout overrides (kept last so they win) */
+@media(min-width:981px){.hero{padding-top:12px}.hero-grid .system-art{zoom:.78;margin-left:auto;margin-top:0}}
+/* What you get: scroll reveal + hover (only when JS is running) */
+html.js-anim #included .scope-theme{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease,background-color .3s ease}
+html.js-anim #included .scope-theme.seen{opacity:1;transform:none}
+#included .scope-theme>summary{transition:padding-left .3s ease}
+#included .scope-theme:hover>summary{padding-left:12px}
+#included .scope-theme .scope-plus{transition:transform .3s ease}
+#included .scope-theme:not([open]):hover .scope-plus{transform:rotate(90deg)}
+@media(prefers-reduced-motion:reduce){html.js-anim #included .scope-theme{opacity:1;transform:none;transition:none}#included .scope-theme>summary,#included .scope-theme .scope-plus{transition:none}}
+/* What you get: panel animates open */
+#included .scope-theme[open] .scope-details{animation:scopeOpen .45s ease both}
+@keyframes scopeOpen{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){#included .scope-theme[open] .scope-details{animation:none}}
+/* Nav bar: same size as the migration page (desktop only) */
+@media(min-width:981px){.topbar .wrap{height:72px;gap:28px}.topbar .brand{font-size:1.05rem}.topbar .nav-links a,.topbar .nav-phone{font-size:.95rem}.topbar .btn{font-size:.95rem;padding:11px 18px}}
+/* Academy certification badges: slightly larger */
+.official-cert img{height:92px}
+/* Slide animation when switching Already on HubSpot / Starting fresh */
+.hero .sub,#hero-h1,.hero-actions .js-book,#system-mode,#record-copy{transition:transform .9s cubic-bezier(.22,1,.36,1),opacity .7s ease}
+.hero .sub.slide-out,#hero-h1.slide-out,.hero-actions .js-book.slide-out,#system-mode.slide-out,#record-copy.slide-out{transition:transform .4s ease-in,opacity .4s ease-in;transform:translateX(-28px);opacity:0}
+.hero .sub.slide-start,#hero-h1.slide-start,.hero-actions .js-book.slide-start,#system-mode.slide-start,#record-copy.slide-start{transition:none;transform:translateX(28px);opacity:0}
+.intent-switch button,.mode-tab{transition:background-color .6s ease,color .6s ease,box-shadow .6s ease}
+.mode-panel:not([hidden]){animation:modePanelSlide 1s cubic-bezier(.22,1,.36,1) both}
+@keyframes modePanelSlide{from{opacity:0;transform:translateX(28px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.hero .sub,#hero-h1,.hero-actions .js-book,#system-mode,#record-copy,.intent-switch button,.mode-tab{transition:none}.hero .sub.slide-out,.hero .sub.slide-start,#hero-h1.slide-out,#hero-h1.slide-start,.hero-actions .js-book.slide-out,.hero-actions .js-book.slide-start,#system-mode.slide-out,#system-mode.slide-start,#record-copy.slide-out,#record-copy.slide-start{transition:none;transform:none;opacity:1}.mode-panel:not([hidden]){animation:none}}
+/* Smooth scrolling */
+html{scroll-behavior:smooth}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
